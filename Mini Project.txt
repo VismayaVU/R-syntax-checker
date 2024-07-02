@@ -1,0 +1,77 @@
+Variable Declaration in R:
+
+S -> id <- num; S | id <- num; | id <- float; S | id <- float;
+num -> [0-9]+
+float -> [+-]?([0-9]*[.])?[0-9]+
+id -> [a-zA-Z][a-zA-Z0-9]*
+
+Array Declaration in R:
+
+S -> id <- array(V dim=(N))
+V -> c(N), V | c(N),
+N -> num, N | num
+id -> [a-zA-Z][a-zA-Z0-9]*
+num -> [0-9]+
+
+While Loops in R:
+	
+<while-loop> -> while (<condition>) <statement-block>
+<condition> -> <expression>
+<statement-block> -> { <statement-list> }
+<expression> -> <literal> | <variable> | <binary-operation> | <unary-operation>
+<literal> -> <number> | <string> | <boolean>
+<variable> -> <identifier>
+<binary-operation> -> <expression> <binary-operator> <expression>
+<unary-operation> -> <unary-operator> <expression>
+<number> -> [0-9]+
+<string> -> "[a-zA-Z0-9]*"
+<boolean> -> TRUE | FALSE
+<identifier> -> [a-zA-Z][a-zA-Z0-9]*
+<binary-operator> -> + | - | * | / | ^ | == | != | > | < | >= | <= | && | ||
+<unary-operator> -> ! | -
+<statement-list> -> <statement> <statement-list> | <statement> | ε
+<statement> -> <assignment> ; | <while-loop> | <if-statement> | <expression>
+<assignment> -> <identifier> <- <expression>
+<if-statement> -> if (<expression>) <statement-block> <else-clause>
+<else-clause> -> else <statement-block> | ε
+
+If-Else in R:
+
+<if-statement> -> if (<expression>) <statement-block>
+<expression> -> <literal> | <variable> | <binary-operation> | <unary-operation>
+<statement-block> -> { <statement-list> }
+<statement-list> -> <statement> ; <statement-list> | <statement>
+<statement> -> <assignment> | <if-statement> | <expression>
+<assignment> -> <identifier> <- <expression>
+<literal> -> <number> | <string> | <boolean>
+<variable> -> <identifier>
+<identifier> -> [a-zA-Z][a-zA-Z0-9]*
+<binary-operation> -> <expression> <binary-operator> <expression>
+<unary-operation> -> <unary-operator> <expression>
+<number> -> [0-9]+
+<string> -> "[a-zA-Z0-9]*"
+<boolean> -> TRUE | FALSE
+<binary-operator> -> + | - | * | / | ^ | == | != | > | < | >= | <= | && | ||
+<unary-operator> -> ! | -
+
+Repeat(Do-While) Loop in R:
+
+<repeat-loop> -> repeat <statement-block>
+<statement-block> -> { <statement-list> } 
+<statement-list> -> <statement> ; <statement-list> | <statement> ; | <if-statement> | break ;
+<statement> -> <assignment> | <expression>
+<assignment> -> <identifier> <- <expression>
+<if-statement> -> if (<expression>) <statement-block>
+<expression> -> <literal> | <variable> | <binary-operation> | <unary-operation>
+<literal> -> <number> | <string> | <boolean>
+<variable> -> <identifier>
+<binary-operation> -> <expression> <binary-operator> <expression>
+<unary-operation> -> <unary-operator> <expression>
+<number> -> [0-9]+
+<string> -> "[a-zA-Z0-9]*"
+<boolean> -> TRUE | FALSE
+<identifier> -> [a-zA-Z][a-zA-Z0-9]*
+<binary-operator> -> + | - | * | / | ^ | == | != | > | < | >= | <= | && | ||
+<unary-operator> -> ! | -
+
+
